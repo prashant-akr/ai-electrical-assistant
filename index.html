@@ -3,58 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Electrical Engineering AI Assistant</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #f4f6f8;
-      margin: 0;
-    }
-    header {
-      background: #007bff;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      font-size: 20px;
-    }
-    .chat-box {
-      max-width: 600px;
-      margin: 20px auto;
-      background: white;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      height: 400px;
-      overflow-y: auto;
-    }
-    .input-box {
-      max-width: 600px;
-      margin: auto;
-      display: flex;
-    }
-    input {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px 0 0 5px;
-    }
-    button {
-      padding: 10px;
-      border: none;
-      background: #007bff;
-      color: white;
-      border-radius: 0 5px 5px 0;
-      cursor: pointer;
-    }
-    .msg {
-      margin: 10px 0;
-    }
-    .user { color: blue; }
-    .bot { color: green; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>⚡ Electrical Engineering AI Assistant</header>
+<header>⚡ Electrical Engineering AI Assistant (AI Powered)</header>
 
 <div class="chat-box" id="chat"></div>
 
@@ -63,41 +16,6 @@
   <button onclick="sendMessage()">Send</button>
 </div>
 
-<script>
-function sendMessage() {
-  let input = document.getElementById("input").value;
-  let chat = document.getElementById("chat");
-
-  if(input === "") return;
-
-  chat.innerHTML += `<div class='msg user'><b>You:</b> ${input}</div>`;
-
-  let response = getResponse(input.toLowerCase());
-
-  chat.innerHTML += `<div class='msg bot'><b>Assistant:</b> ${response}</div>`;
-
-  document.getElementById("input").value = "";
-  chat.scrollTop = chat.scrollHeight;
-}
-
-function getResponse(input) {
-  if(input.includes("ohm")) {
-    return "Ohm's Law: V = I × R";
-  }
-  else if(input.includes("transformer")) {
-    return "A transformer works on mutual induction and transfers electrical energy between circuits.";
-  }
-  else if(input.includes("power")) {
-    return "Power formula: P = V × I";
-  }
-  else if(input.includes("kirchhoff")) {
-    return "Kirchhoff's Laws: KCL (current) and KVL (voltage) are used in circuit analysis.";
-  }
-  else {
-    return "Sorry, I can answer basic electrical questions like formulas, laws, and concepts.";
-  }
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
